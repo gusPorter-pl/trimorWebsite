@@ -13,9 +13,15 @@ const changeDisplay = (thisSection) => {
 
 const search = () => {
    const textInput = document.getElementById("search").value;
+   const contents = document.getElementById("contents");
    if (textInput === "") {
-
+      contents.style.display = "block";
+      // Show articles based off of textInput
    } else {
-      
+      contents.style.display = "none";
    }
+}
+
+window.onload = () => {
+   document.getElementById("contents").style.display = "block";
 }
