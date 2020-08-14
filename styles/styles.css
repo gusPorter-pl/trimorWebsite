@@ -4,14 +4,17 @@ body {
 }
 .body {
    padding: 15px;
+   padding-top: 100px;
    padding-bottom: 40px;
    display: block;
    margin: 0 auto;
    max-width: 900px;
 }
-.header {
+header {
    background-color: #86070d;
    border: 1px solid #86070d;
+   width: 100%;
+   position: fixed;
 }
 h1, h2, h3, h4, h5, h6, p, input {
    font-family: Georgia, Times, "Times New Roman", serif;
@@ -25,9 +28,9 @@ h2, h3, h4, h5, h6, p {
 }
 h1 {
    margin: 0.3em;
-   margin-left: 50px;
+   /* margin-left: 50px; */
    font-size: 3em;
-   color: #FFDEAA;
+   color: #ffe6bd;
    font-variant: small-caps;
 }
 h2 {
@@ -54,6 +57,7 @@ h5 {
    color: #362922;
    text-transform: uppercase;
    margin-top: 0.8em;
+   margin-bottom: 1.2em;
 }
 p {
    text-align: justify;
