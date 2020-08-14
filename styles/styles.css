@@ -1,10 +1,17 @@
 body {
    background-color: #FFDEAA;
+   margin: 0;
+}
+.body {
    padding: 15px;
    padding-bottom: 40px;
    display: block;
    margin: 0 auto;
    max-width: 900px;
+}
+.header {
+   background-color: #86070d;
+   border: 1px solid #86070d;
 }
 h1, h2, h3, h4, h5, h6, p, input {
    font-family: Georgia, Times, "Times New Roman", serif;
@@ -17,11 +24,11 @@ h2, h3, h4, h5, h6, p {
    padding-right: 5px;
 }
 h1 {
-   margin-left: 25px;
+   margin: 0.3em;
+   margin-left: 50px;
    font-size: 3em;
-   color: #4d3b30;
+   color: #FFDEAA;
    font-variant: small-caps;
-   margin-top: 0.6em;
 }
 h2 {
    font-size: 2em;
