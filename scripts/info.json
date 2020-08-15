@@ -1,0 +1,26 @@
+{
+	"settlements": {
+		"trimor": {
+
+		},
+		"creswell": {
+
+		},
+		"buldaar": {
+
+		},
+		"fleydire": {
+
+		}
+	},
+	"pcs": {},
+	"npcs": {},
+	"lore": {
+		"deities": {},
+		"holidays": {}
+	},
+	"maps" : [
+		"Trimor",
+		"CrinegardPlains"
+	]
+}
