@@ -16,9 +16,13 @@ header {
    width: 100%;
    position: fixed;
 }
-h1, h2, h3, h4, h5, h6, p, input {
+h1, h2, h3, h4, h5, h6, p, input, button {
    font-family: Georgia, Times, "Times New Roman", serif;
    margin-bottom: 0.6em;
+}
+li {
+   font-family: Georgia, Times, "Times New Roman", serif;
+   margin-bottom: 0.1em;
 }
 h2, h3, h4, h5, h6, p {
    margin-left: 10px;
@@ -62,6 +66,7 @@ h5 {
 p {
    text-align: justify;
    text-justify: inter-word;
+   margin-top: 0.1em;
 }
 table {
    border-collapse: collapse;
@@ -102,7 +107,12 @@ a:hover {
 .indent {
    margin: 5px;
 }
-#search {
+.filters {
+   font-size: medium;
+   float: right;
+   margin-right: 15px;
+}
+#searchInput {
    margin: 10px;
    padding: 5px;
    width: 96%;

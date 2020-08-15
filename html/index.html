@@ -13,8 +13,14 @@
       <div class="body">
          <img class="centre" src="../images/trimorHeader.png">
          <h2>Contents</h2>
-         <input type="text" id="search" name="search" placeholder="Search here" oninput="search()">
-         <div class="indent" id="contents">
+         <input type="text" id="searchInput" name="searchInput" placeholder="Search here" oninput="search()">
+         <div id="showFilters" style="display: block;">
+            <button class="filters" onclick="showFilters()">Show Filters</button>
+         </div>
+         <div id="hideFilters" style="display: none;">
+            <button class="filters" onclick="hideFilters()">Hide Filters</button>
+         </div>
+         <div class="indent" id="contents" style="display: block;">
             <h3>Locations</h3>
             <h4><a href="./settlements/trimor.html">Trimor</a></h4>
             <h4><a href="./settlements/creswell.html">Creswell</a></h4>
@@ -31,6 +37,7 @@
             <h4><a href="./maps/mapOfTrimor.html">Trimor</a></h4>
             <h4><a href="./maps/mapOfCrinegardPlains.html">Crinegard Plains</a></h4>
          </div>
+         <div class="indent" id="search" style="display: none;"></div>
       </div>
    </body>
 </html>
