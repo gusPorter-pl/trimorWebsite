@@ -72,7 +72,6 @@ def html_list_to_dictionary(input_list):
                             tag, info = get_tag_and_info(info)
                         key_tag = info
                     elif tag == "span":
-                        # print("Before:", info_dict[key_tag])
                         span_tag, span_info = get_tag_and_info(line)
                         inner_tag, inner_info = get_tag_and_info(span_info)
                         span_last = True
@@ -88,6 +87,7 @@ def html_list_to_dictionary(input_list):
                             info_dict[key_tag] += "\n" + li_info
         else:
             # This line has text on it
+            key_tag = key_tag if key_tag != "" else "Description"
             if key_tag not in info_dict:
                 info_dict[key_tag] = line
             else:
@@ -99,15 +99,28 @@ def html_list_to_dictionary(input_list):
 
     # for key, value in info_dict.items():
     #     print("{}\n{}\n".format(key, value))
+    return info_dict
 
 def write_json(info_dict, article_type):
-    pass
+    filename = "./info.json"
+    page = info_dict["title"].lower()
+    del info_dict["title"]
+    with open(filename, 'r') as json_file:
+        json_obj = json.load(json_file)
+        json_obj[article_type][page] = info_dict
+
+    with open(filename, 'w') as outfile:
+        json.dump(json_obj, outfile, indent=3)
 
 def main():
-    filename = "../html/settlements/fleydire.html"
-    article_type = "settlement"
-    html_list = get_html(filename)
-    info_dict = html_list_to_dictionary(html_list)
-    write_json(info_dict, article_type)
+    article_type = "lore"
+    article = "holidays"
+    filename = "../html/{}/{}.html".format(article_type, article)
+    try:
+        html_list = get_html(filename)
+        info_dict = html_list_to_dictionary(html_list)
+        write_json(info_dict, article_type)
+    except FileNotFoundError:
+        print("This file does not exist.")
 
 main()
