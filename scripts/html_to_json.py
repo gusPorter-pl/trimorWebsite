@@ -1,5 +1,4 @@
 import json
-
 """
 Converts html text to json for searching
 """
@@ -27,7 +26,7 @@ def html_list_to_dictionary(input_list):
         else:
             tag = tag_contents[1: ]
         return tag
-    
+
     def get_tag_and_info(line):
         start_closing_tag = line.find('>')
         end_opening_tag = line.rfind('<')
@@ -40,58 +39,47 @@ def html_list_to_dictionary(input_list):
         info = line[start_closing_tag + 1: end_opening_tag]
         return tag, info
 
-    current_tag = ""
     key_tag = ""
     info_dict = {}
     header_tags = ("h2", "h3", "h4")
     info_tags = ("p", "li")
     span_last = False
     for line in input_list:
-        if line[0] == '<':
-            if line[1] == '/':
-                # End tag
-                current_tag = ""
+        if line[0] == '<':  # Line is a tag
+            if line[1] == '/':  # Line is an end tag
                 tag = get_tag(line)
-                # print("End tag:", tag)
             else:
                 right_index = line.find('>')
-                if right_index == len(line) - 1:
-                    # Line has only tag
-                    tag = get_tag(line)
-                    if tag in info_tags:
-                        current_tag = (tag)
-                    # print("   Start tag:", tag)
-                else:
-                    # Line has tag and info
+                if right_index != len(line) - 1:  # Line has tag and info
                     tag, info = get_tag_and_info(line)
-                    # print("   Tag ({}) and info ({})".format(tag, info))
                     if tag == "title":
                         info_dict[tag] = info
                     elif tag in header_tags:
-                        if info[0] == '<':
+                        if info[0] == '<':  # If there is a tag inside the tag
                             tag, info = get_tag_and_info(info)
                         key_tag = info
-                    elif tag == "span":
+                    elif tag == "span":  # We want to get the info out of span
                         span_tag, span_info = get_tag_and_info(line)
                         inner_tag, inner_info = get_tag_and_info(span_info)
-                        span_last = True
+                        span_last = True  # So we know how we add to the dictionary
                         if key_tag not in info_dict:
                             info_dict[key_tag] = inner_info
                         else:
                             info_dict[key_tag] += " " + inner_info
-                    elif tag == "li":
+                    elif tag == "li":  # Get the info out of the list item and add it straight to the dictionary
                         li_tag, li_info = get_tag_and_info(line)
                         if key_tag not in info_dict:
                             info_dict[key_tag] = li_info
                         else:
                             info_dict[key_tag] += "\n" + li_info
-        else:
-            # This line has text on it
+        else:  # This line has just text on it
             key_tag = key_tag if key_tag != "" else "Description"
             if key_tag not in info_dict:
                 info_dict[key_tag] = line
-            else:
                 if span_last:
+                    span_last = False
+            else:
+                if span_last:  # Add the span content without new line
                     info_dict[key_tag] += " " + line
                     span_last = False
                 else:
