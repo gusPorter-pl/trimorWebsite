@@ -1,27 +1,29 @@
-const changeDisplay = (thisSection) => {
-   const allSections = ["home", "shop", "location", "news", "guestBook"];
-   const otherSections = allSections.filter(section => section != thisSection);
-
-   document.getElementById(thisSection).style.display = "block";
-   document.getElementById(thisSection + "Tab").style.backgroundColor = "#a0a0a0";
-
-   for (section of otherSections) {
-      document.getElementById(section).style.display = "none";
-      document.getElementById(section + "Tab").style.backgroundColor = "transparent";
-   }
-};
-
 const search = () => {
-   const textInput = document.getElementById("search").value;
+   const searchInput = document.getElementById("searchInput").value;
    const contents = document.getElementById("contents");
-   if (textInput === "") {
+   const search = document.getElementById("search");
+   if (searchInput === "") {
       contents.style.display = "block";
-      // Show articles based off of textInput
+      search.style.display = "none";
+      // Show articles based off of searchInput
    } else {
+      search.style.display = "block";
       contents.style.display = "none";
+      // clear search
    }
 }
 
+const showFilters = () => {
+   const text = readFileSync("../html/maps/mapOfTrimor.html");
+   console.log(text);
+}
+
+const hideFilters = () => {
+}
+
 window.onload = () => {
-   document.getElementById("contents").style.display = "block";
+   // document.getElementById("contents").style.display = "block";
+   // document.getElementById("search").style.display = "none";
+   // document.getElementById("showFilters").style.display = "block";
+   // document.getElementById("hideFilters").style.display = "none";
 }
