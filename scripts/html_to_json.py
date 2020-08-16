@@ -16,10 +16,8 @@ def html_list_to_dictionary(input_list):
     def get_tag(line):
         line_contents = line.split()
         tag_contents = line_contents[0]
-        if tag_contents[-1] == '>':
-            # Tag has no parameters
-            if tag_contents[1] == '/':
-                # Tag is closing tag
+        if tag_contents[-1] == '>':  # Tag has no parameters
+            if tag_contents[1] == '/':  # Tag is closing tag
                 tag = tag_contents[2: -1]
             else:
                 tag = tag_contents[1: -1]
@@ -31,8 +29,7 @@ def html_list_to_dictionary(input_list):
         start_closing_tag = line.find('>')
         end_opening_tag = line.rfind('<')
         tag_contents = line[: start_closing_tag].split()[0]
-        if tag_contents[-1] == '>':
-            # Tag has no parameters
+        if tag_contents[-1] == '>':  # Tag has no parameters
             tag = tag_contents[1: -1]
         else:
             tag = tag_contents[1: ]
