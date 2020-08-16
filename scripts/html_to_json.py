@@ -1,20 +1,113 @@
-def get_html():
-    filename = ""
-    pass
+import json
 
-def html_text_to_text(input_text):
-    pass
+"""
+Converts html text to json for searching
+"""
 
-def text_to_json(text):
-    pass
+def get_html(filename):
+    input_file = open(filename, 'r')
+    html_text = input_file.read()
+    input_file.close()
+    html_list = html_text.split("\n")
+    html_list = [line.strip() for line in html_list]
+    return html_list
 
-def write_json(json_text):
+def html_list_to_dictionary(input_list):
+
+    def get_tag(line):
+        line_contents = line.split()
+        tag_contents = line_contents[0]
+        if tag_contents[-1] == '>':
+            # Tag has no parameters
+            if tag_contents[1] == '/':
+                # Tag is closing tag
+                tag = tag_contents[2: -1]
+            else:
+                tag = tag_contents[1: -1]
+        else:
+            tag = tag_contents[1: ]
+        return tag
+    
+    def get_tag_and_info(line):
+        start_closing_tag = line.find('>')
+        end_opening_tag = line.rfind('<')
+        tag_contents = line[: start_closing_tag].split()[0]
+        if tag_contents[-1] == '>':
+            # Tag has no parameters
+            tag = tag_contents[1: -1]
+        else:
+            tag = tag_contents[1: ]
+        info = line[start_closing_tag + 1: end_opening_tag]
+        return tag, info
+
+    current_tag = ""
+    key_tag = ""
+    info_dict = {}
+    header_tags = ("h2", "h3", "h4")
+    info_tags = ("p", "li")
+    span_last = False
+    for line in input_list:
+        if line[0] == '<':
+            if line[1] == '/':
+                # End tag
+                current_tag = ""
+                tag = get_tag(line)
+                # print("End tag:", tag)
+            else:
+                right_index = line.find('>')
+                if right_index == len(line) - 1:
+                    # Line has only tag
+                    tag = get_tag(line)
+                    if tag in info_tags:
+                        current_tag = (tag)
+                    # print("   Start tag:", tag)
+                else:
+                    # Line has tag and info
+                    tag, info = get_tag_and_info(line)
+                    # print("   Tag ({}) and info ({})".format(tag, info))
+                    if tag == "title":
+                        info_dict[tag] = info
+                    elif tag in header_tags:
+                        if info[0] == '<':
+                            tag, info = get_tag_and_info(info)
+                        key_tag = info
+                    elif tag == "span":
+                        # print("Before:", info_dict[key_tag])
+                        span_tag, span_info = get_tag_and_info(line)
+                        inner_tag, inner_info = get_tag_and_info(span_info)
+                        span_last = True
+                        if key_tag not in info_dict:
+                            info_dict[key_tag] = inner_info
+                        else:
+                            info_dict[key_tag] += " " + inner_info
+                    elif tag == "li":
+                        li_tag, li_info = get_tag_and_info(line)
+                        if key_tag not in info_dict:
+                            info_dict[key_tag] = li_info
+                        else:
+                            info_dict[key_tag] += "\n" + li_info
+        else:
+            # This line has text on it
+            if key_tag not in info_dict:
+                info_dict[key_tag] = line
+            else:
+                if span_last:
+                    info_dict[key_tag] += " " + line
+                    span_last = False
+                else:
+                    info_dict[key_tag] += "\n" + line
+
+    # for key, value in info_dict.items():
+    #     print("{}\n{}\n".format(key, value))
+
+def write_json(info_dict, article_type):
     pass
 
 def main():
-    html_text = get_html()
-    text = html_text_to_text(html_text)
-    json_text = text_to_json(text)
-    write_json(json_text)
+    filename = "../html/settlements/fleydire.html"
+    article_type = "settlement"
+    html_list = get_html(filename)
+    info_dict = html_list_to_dictionary(html_list)
+    write_json(info_dict, article_type)
 
 main()
