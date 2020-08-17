@@ -58,6 +58,8 @@ def html_list_to_dictionary(input_list):
                     elif tag == "span":  # We want to get the info out of span
                         span_tag, span_info = get_tag_and_info(line)
                         inner_tag, inner_info = get_tag_and_info(span_info)
+                        if line[-1] != '>':  # There is more text after span tag
+                            inner_info += line[line.rfind('>') + 1: ]
                         span_last = True  # So we know how we add to the dictionary
                         if key_tag not in info_dict:
                             info_dict[key_tag] = inner_info
@@ -98,8 +100,8 @@ def write_json(info_dict, article_type):
         json.dump(json_obj, outfile, indent=3)
 
 def main():
-    article_type = "lore"
-    article = "holidays"
+    article_type = "settlements"
+    article = "fleydire"
     filename = "../html/{}/{}.html".format(article_type, article)
     try:
         html_list = get_html(filename)
