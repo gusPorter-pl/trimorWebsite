@@ -49,7 +49,7 @@
          "Natural Resources": "Coal, ore, some say there are traces of adamantine in the mines."
       },
       "fleydire": {
-         "Description": "Fleydire is located on a small island, roughly 25 kilometres squared. It is by The Malva Coast to the west of Creswell Fleydire is a popular tourist spot. The views over The Malva Coast are unmatched with the scenery and delights of food on offer. You can enjoy the coastline while enjoying various seafoods, or spend the night at the casino located in the northern reaches of town. A monastery to Avandra is found in the central square, and all are welcome to gather for worship.",
+         "Description": "Fleydire is located on a small island, roughly 25 kilometres squared. It is by The Malva Coast to the west of Creswell. There are raising bridges to the north, and south-east, monitored by Starrgard. Fleydire is a popular tourist spot. The views over The Malva Coast are unmatched with the scenery and delights of food on offer. You can enjoy the coastline while enjoying various seafoods, or spend the night at the casino located in the northern reaches of town. A monastery to Avandra is found in the central square, and all are welcome to gather for worship.",
          "Demographics": "37% humans, 26% dwarves, 18% halflings, 12% elves, 7% other races",
          "Government": "Fleydire is overseen by a small council of eight upper class individuals. These lawmakers monitor various parts of the town, including commerce, trade, and military. The highest ranked individual is a dedicated spokesperson for the town.",
          "Defences": "There are prominent forts located by the two bridges entering the city, who occasionally establish random checkpoints. There are other watch sites along the road beyond the town borders, that keep an eye on traffic. Fleydire provides some support to the village Kengruun, that is located to the east.",
@@ -86,9 +86,5 @@
          "Winter Solstice (Xyrran 31 - Holaris 1)": "There isn't a lot to celebrate through the cold winter, but some cities hold a festival celebrating the Winter Solstice. Some take time during this week to check up on loved ones, while a large celebration is undertaken in Highgate, where Auril is most present.",
          "Last Storm (Holaris 31)": "The significance of the end of winter is different for everyone, especially for Auril. It is her will to unleash a tragic blizzard to mark the end of her season, and if she feel it hasn't gone her way, the last day of winter will not be a pleasant night..."
       }
-   },
-   "maps": [
-      "Trimor",
-      "CrinegardPlains"
-   ]
+   }
 }
