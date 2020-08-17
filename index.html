@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Contents</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="./styles/styles.css" type="text/css"/>
+      <script src="./scripts/main.js"></script>
+   </head>
+   <body>
+      <header>
+         <h1 class="body" style="padding: 15px;">Trimor</h1>
+      </header>
+      <div class="body">
+         <img class="centre" src="./images/trimorHeader.png">
+         <h2>Contents</h2>
+         <input type="text" id="searchInput" name="searchInput" placeholder="Search here" oninput="search()">
+         <div id="showFilters" style="display: block;">
+            <button class="filters" onclick="showFilters()">Show Filters</button>
+         </div>
+         <div id="hideFilters" style="display: none;">
+            <button class="filters" onclick="hideFilters()">Hide Filters</button>
+         </div>
+         <div class="indent" id="contents" style="display: block;">
+            <h3>Locations</h3>
+            <h4><a href="./html/settlements/trimor.html">Trimor</a></h4>
+            <h4><a href="./html/settlements/creswell.html">Creswell</a></h4>
+            <h4><a href="./html/settlements/buldaar.html">Buldaar</a></h4>
+            <h4><a href="./html/settlements/fleydire.html">Fleydire</a></h4>
+            <h3>Lore</h3>
+            <h4><a href="./html/lore/deities.html">Pantheons & Deities</a></h4>
+            <h4><a href="./html/lore/holidays.html">Holidays of Trimor</a></h4>
+            <h3>Organisations</h3>
+            <h4><a href="./html/lore/arcaneConglomerate.html">Arcane Conglomerate</a></h4>
+            <h4><a href="./html/lore/crimsonMalitia.html">Crimson Malitia</a></h4>
+            <h4><a href="./html/lore/grindwallRecord.html">Grindwall Record</a></h4>
+            <h3>Maps</h3>
+            <h4><a href="./html/maps/mapOfTrimor.html">Trimor</a></h4>
+            <h4><a href="./html/maps/mapOfCrinegardPlains.html">Crinegard Plains</a></h4>
+         </div>
+         <div class="indent" id="search" style="display: none;"></div>
+      </div>
+   </body>
+</html>
