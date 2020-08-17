@@ -76,6 +76,11 @@ td {
    height: 35px;
    min-height: 35px;
 }
+hr {
+   border-color: #47362b;
+   margin-top: 15px;
+   width: 98%;
+}
 a:link, a:visited {
    color: inherit;
    text-decoration: none;
