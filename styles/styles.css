@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, p, input, button {
    font-family: Georgia, Times, "Times New Roman", serif;
    margin-bottom: 0.6em;
 }
-li {
+li, label {
    font-family: Georgia, Times, "Times New Roman", serif;
    margin-bottom: 0.1em;
 }
@@ -117,8 +117,13 @@ a:hover {
    float: right;
    margin-right: 15px;
 }
+.check {
+   margin-left: 20px;
+   padding-left: 5px;
+   font-size: medium;
+}
 #searchInput {
-   margin: 10px;
+   margin-left: 10px;
    padding: 5px;
    width: 96%;
    font-size: medium;

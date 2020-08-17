@@ -2,7 +2,14 @@ const search = () => {
    const searchInput = document.getElementById("searchInput").value.toLowerCase();
    const contents = document.getElementById("contents");
    const search = document.getElementById("search");
-
+   const filters = {
+      "settlements": document.getElementById("Locations").checked,
+      "lore": document.getElementById("Lore").checked,
+      "npcs": document.getElementById("NPCs").checked,
+      "pcs": document.getElementById("PCs").checked,
+      "organisations": document.getElementById("Organisations").checked
+   };
+   
    search.innerHTML = "";
    if (searchInput === "") {
       contents.style.display = "block";
@@ -17,6 +24,9 @@ const search = () => {
          let count = 0;
          for (let articleType of articleTypes) {
             // "settlements", "lore", ...
+            if (!filters[articleType] && notAllFalse(filters)) {
+               continue;
+            }
             let articles = infoObject[articleType];
             let articleTitles = Object.keys(articles);
             if (articleTitles.length > 0) {
@@ -60,7 +70,6 @@ const search = () => {
             }
          }
       });
-      // Show articles based off of searchInput
    }
 }
 
@@ -70,10 +79,27 @@ const clearSearch = () => {
 
 const capitalise = aString => aString.charAt(0).toUpperCase() + aString.slice(1, aString.length);
 
+const notAllFalse = (filters) => {
+   const values = Object.values(filters);
+   for (let value of values) {
+      if (value) {
+         return true;
+      }
+   } return false;
+}
+
 const showFilters = () => {
+   const showFilterButton = document.getElementById("showFilters");
+   const hideFilterButton = document.getElementById("hideFilters");
+   showFilterButton.style.display = "none";
+   hideFilterButton.style.display = "block";
 }
 
 const hideFilters = () => {
+   const showFilterButton = document.getElementById("showFilters");
+   const hideFilterButton = document.getElementById("hideFilters");
+   showFilterButton.style.display = "block";
+   hideFilterButton.style.display = "none";
 }
 
 window.onload = () => {
