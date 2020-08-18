@@ -77,7 +77,14 @@ const clearSearch = () => {
    document.getElementById("searchInput").value = "";
 }
 
-const capitalise = aString => aString.charAt(0).toUpperCase() + aString.slice(1, aString.length);
+const capitalise = aString => {
+   aString = aString.charAt(0).toUpperCase() + aString.slice(1, aString.length);
+   for (let i = 0; i < aString.length; i++) {
+      if (aString.charAt(i) == "-") {
+         aString = aString.slice(0, i) + " " + aString.slice(i + 1, aString.length);
+      }
+   } return aString;
+};
 
 const notAllFalse = (filters) => {
    const values = Object.values(filters);
