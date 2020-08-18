@@ -91,6 +91,9 @@ def html_list_to_dictionary(input_list):
 def write_json(info_dict, article_type):
     filename = "./info.json"
     page = info_dict["title"].lower()
+    for i in range(len(page)):
+        if page[i] == " ":
+            page = page[:i] + "-" + page[i + 1:]
     del info_dict["title"]
     with open(filename, 'r') as json_file:
         json_obj = json.load(json_file)
@@ -100,13 +103,14 @@ def write_json(info_dict, article_type):
         json.dump(json_obj, outfile, indent=3)
 
 def main():
-    article_type = "settlements"
-    article = "fleydire"
+    article_type = "lore"
+    article = "holidays-of-trimor"
     filename = "../html/{}/{}.html".format(article_type, article)
     try:
         html_list = get_html(filename)
         info_dict = html_list_to_dictionary(html_list)
         write_json(info_dict, article_type)
+        print("Successfully saved {} in {}.".format(article, article_type))
     except FileNotFoundError:
         print("This file does not exist.")
 
