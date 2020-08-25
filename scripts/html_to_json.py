@@ -1,7 +1,50 @@
 import json
+import sys
 """
 Converts html text to json for searching
 """
+
+def get_article(articles):
+    message = " Remember to save your article! "
+    hashes = "-" * len(message)
+    print("{}\n{}\n{}".format(hashes, message, hashes))
+    print("\nWhich article type would you like to load?")
+    article_types = list(articles.keys())
+    for i in range(0, len(article_types)):
+        print("{}. {}".format(i + 1, article_types[i]))
+    article_type = input("Enter number: ")
+    try:
+        article_int = int(article_type)
+    except ValueError:
+        print("Invalid value")
+        sys.exit()
+    finally:
+        try:
+            if article_int <= 0:
+                raise IndexError()
+            article_type = article_types[article_int - 1]
+        except IndexError:
+            print("Invalid value")
+            sys.exit()
+    print("\nWhich article would you like to load?")
+    article_list = list(articles[article_type])
+    for i in range(0, len(article_list)):
+        print("{}. {}".format(i + 1, article_list[i]))
+    article_option = input("Enter number: ")
+    try:
+        article_int = int(article_option)
+    except ValueError:
+        print("Invalid value")
+        sys.exit()
+    finally:
+        try:
+            if article_int <= 0:
+                raise IndexError()
+            print()
+            return article_type, article_list[article_int - 1]
+        except IndexError:
+            print("Invalid value")
+            sys.exit()
 
 def get_html(filename):
     input_file = open(filename, 'r')
@@ -103,15 +146,32 @@ def write_json(info_dict, article_type):
         json.dump(json_obj, outfile, indent=3)
 
 def main():
-    article_type = "lore"
-    article = "holidays-of-trimor"
-    filename = "../html/{}/{}.html".format(article_type, article)
+    articles = {
+        "settlements": ["trimor", "creswell", "buldaar", "fleydire"],
+        "lore": ["deities-of-trimor", "holidays-of-trimor"],
+        "npcs": ["alton", "angelica-tosscobble", "morgon-thorngage", "the-tulleys", "thria-bartek", "tulbar-greybrew"]
+    }
+    article_type, article = get_article(articles)
+    if article_type == "all":
+        for article_type in articles.keys():
+            for article in articles[article_type]:
+                get_html_and_set_json(article_type, article)
+    elif article == "all":
+        for article in articles[article_type]:
+            get_html_and_set_json(article_type, article)
+    else:
+        get_html_and_set_json(article_type, article)
+                
+
+def get_html_and_set_json(article_type, article):
     try:
+        filename = "../html/{}/{}.html".format(article_type, article)
         html_list = get_html(filename)
+    except FileNotFoundError:
+        print("The file '{}' does not exist.".format(filename))
+    finally:
         info_dict = html_list_to_dictionary(html_list)
         write_json(info_dict, article_type)
         print("Successfully saved {} in {}.".format(article, article_type))
-    except FileNotFoundError:
-        print("This file does not exist.")
 
 main()
