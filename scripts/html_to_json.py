@@ -167,11 +167,11 @@ def get_html_and_set_json(article_type, article):
     try:
         filename = "../html/{}/{}.html".format(article_type, article)
         html_list = get_html(filename)
-    except FileNotFoundError:
-        print("The file '{}' does not exist.".format(filename))
-    finally:
         info_dict = html_list_to_dictionary(html_list)
         write_json(info_dict, article_type)
         print("Successfully saved {} in {}.".format(article, article_type))
+    except FileNotFoundError:
+        print("The file '{}' does not exist.".format(filename))
+        sys.exit()
 
 main()
