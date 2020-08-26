@@ -47,7 +47,7 @@ def get_article(articles):
             sys.exit()
 
 def get_html(filename):
-    input_file = open(filename, 'r')
+    input_file = open(filename, 'r', encoding="utf8")
     html_text = input_file.read()
     input_file.close()
     html_list = html_text.split("\n")
@@ -84,6 +84,7 @@ def html_list_to_dictionary(input_list):
     header_tags = ("h2", "h3", "h4")
     info_tags = ("p", "li")
     span_last = False
+
     for line in input_list:
         if line[0] == '<':  # Line is a tag
             if line[1] == '/':  # Line is an end tag
@@ -126,9 +127,7 @@ def html_list_to_dictionary(input_list):
                     span_last = False
                 else:
                     info_dict[key_tag] += "\n" + line
-
-    # for key, value in info_dict.items():
-    #     print("{}\n{}\n".format(key, value))
+    
     return info_dict
 
 def write_json(info_dict, article_type):
@@ -147,22 +146,45 @@ def write_json(info_dict, article_type):
 
 def main():
     articles = {
-        "settlements": ["trimor", "creswell", "buldaar", "fleydire"],
-        "lore": ["deities-of-trimor", "holidays-of-trimor"],
-        "npcs": ["alton", "angelica-tosscobble", "morgon-thorngage", "the-tulleys", "thria-bartek", "tulbar-greybrew"]
+        "settlements": [
+            "buldaar",
+            "creswell",
+            "darrington",
+            "duffledon",
+            "fleydire",
+            "trimor"
+        ],
+        "locations": [
+            "angelica's-house",
+            "fort-kustav"
+        ],
+        "organisations": [
+            "arcane-conglomerate",
+            "crimson-malitia",
+            "grindwall-record",
+            "red-blades"
+        ],
+        "npcs": [
+            "alton",
+            "angelica-tosscobble",
+            "ayen",
+            "dudo",
+            "jeffery-gyer",
+            "morgon-thorngage",
+            "needo-byzaar",
+            "the-tulleys",
+            "thria-bartek",
+            "tulbar-greybrew",
+            "zerrioth"
+        ],
+        "lore": [
+            "deities-of-trimor",
+            "holidays-of-trimor"
+        ]
     }
     article_type, article = get_article(articles)
-    if article_type == "all":
-        for article_type in articles.keys():
-            for article in articles[article_type]:
-                get_html_and_set_json(article_type, article)
-    elif article == "all":
-        for article in articles[article_type]:
-            get_html_and_set_json(article_type, article)
-    else:
-        get_html_and_set_json(article_type, article)
+    get_html_and_set_json(article_type, article)
                 
-
 def get_html_and_set_json(article_type, article):
     try:
         filename = "../html/{}/{}.html".format(article_type, article)

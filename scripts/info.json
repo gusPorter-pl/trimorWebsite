@@ -33,11 +33,11 @@
          "Tipsy Keg (Lower Ring)": "The tavern where this group of adventurers stayed together for the first time. Relatively popular, you can expect a large clientel most evenings. Emilia is a barmaid at the Tipsy Keg. She is a tall human with long, red, braided hair, and light blue eyes. Kolvar is a dwarven cook. Relatively tall for a dwarf, he talks in a scruffy Scottish accent. He has tied back brown hair, and is quite messy and sweaty.",
          "The Berranium Forge (Lower Ring)": "A lesser-known blacksmith in Creswell. Not as many readily available weapons, but the ones that are, are of the best quality.",
          "Tinker Tops (Lower Ring)": "The main general goods store of Creswell. Many common and adventuring items can be acquired here.",
-         "The Barracks (Inner Ring)": "Found just off to the side of the main staircase leading towards the northern exit of Creswell. It is a three-story, castle-like building. General Commander Thria Bartek is the highest ranking official in Creswell, and runs the barracks. Captain Morgon Thorngage is a captain of the Starrgard in Creswell.",
+         "The Barracks (Inner Ring)": "Found just off to the side of the main staircase leading towards the northern exit of Creswell. It is a three-story, castle-like building. General Commander Thria Bartek is the highest ranking official in Creswell, and runs the barracks. Her office is on the top floor. Captain Morgon Thorngage is a captain of the Starrgard in Creswell.",
          "Mindless Discoveries (Inner Ring)": "A library with some weird texts. Some on history, arcane, and religion.",
-         "Herbal Concoctions (Inner Ring)": "A potion store located on one of the side streets of the Inner Ring, run by a gnome named Alton. A relatively small shop, it has a large selection of wares on offer.",
-         "Tulley's & Tulley's (Inner Ring)": "An enchantment shop that has some adventuring wares for sale. Headed by Aldom and Dyron Tulley.",
-         "Tormund Fighting Pits (Outer Ring)": "Located on the south-eastern side of the Outer Ring. It can hold up to 2,500 people for its tri-weekly schedule. The arena is oval-shaped, with entrances to the pits at the four extremes. The walls are 10 ft tall.",
+         "Herbal Concoctions (Inner Ring)": "A potion store located on one of the side streets of the Inner Ring, run by a gnome named Alton. For a relatively small shop, it has a large selection of wares on offer.",
+         "Tulley's & Tulley's (Inner Ring)": "An enchantment shop that has some adventuring wares for sale. Headed by Aldom and Dyron Tulley, it is a medium-sized shop located on a side road just off the Inner Ring.",
+         "Tormund Fighting Pits (Outer Ring)": "Located just south of the Outer Ring, past the docks and the Commercial Port. It can hold up to 2,500 people for its tri-weekly schedule. The arena is oval-shaped, with entrances to the pits at the four extremes. The walls are 10 ft tall.",
          "Trade Guild": "The multi-storey building has a wondrous view over the docks, and has Crown-established and independent workers throughout the guild monitoring the imports for distribution across the kingdom, and the exports to be sent away to other empires across Greyspire.",
          "Grindwall Record": "This division of the Grindwall Record in Creswell specialises in economics and trade.",
          "Temple to the Dawn Father": "One of the many temples to Pelor is situated here, giving blessings to farmers and forragers, along with anyone else seeking guidance from darkness.",
@@ -50,8 +50,15 @@
          "Government": "There is a small barracks established near the southern entrance, where Starrgard monitor the town. Other than this, there are no set individuals that look over the town.",
          "Defences": "The large rocks that surround the town cause for a tricky, and curvy path up to the main gates. Forts are located along these paths, and are hidden among the stonework, making it tricky to traverse without being spotted. Steel gates can be shut at the town entrance, making it near impossible to conquer from these routes. There is probably no safer place to be in the Crinegard Plains.",
          "Industry": "The Collarglaive are home to many miners of Buldaar, who work to gather coal and ore for their own use, and export throughout the kingdom.",
-         "Infrastructure": "In the north-western parts of Buldaar is the Collarglaive, a smaller village where a lot dwarves and miners live. Around 2,800 humanoids live here, and most tend to not explore the rest of Buldaar, the dwarves believing in strength among themselves.",
-         "Temple of Moradin": "The Allhammer has been very prominent throughout the Crinegard Plains for centuries, and his central temple is found in the heart of the Collarglaive. Moradin represents loyalty and legacy, and are worshipped by smiths and artisans, as he guides them in the forging of great creations.",
+         "Collarglaive": "In the north-eastern parts of Buldaar is the Collarglaive, a smaller village where a lot dwarves and miners live. Around 2,800 humanoids live here, and most tend to not explore the rest of Buldaar, the dwarves believing in strength among themselves. Everything they need is here, their homes, work, and a bustling tavern.",
+         "The Mines": "Buldaar became a successful settlement due to the abundance of strategic resources, including coal and ore. Some also say that there is a source of adamantine in the mines. There are half a dozen mines scattered through the Collarglaive that are predominalty dwarf-worked. The mines are overlooked by a branch of the Trade Guild, ultimately run by the Crown, who keep track of the ores and materials coming out of the mines. There resources are divvied up first to the Crown, and any resources are then sole to blacksmiths and jewellers. Some miners hide rarer gems that they discover, and there are random checks run that encourage those not to steal from the Crown's rightful materials.",
+         "The Drunken Ratt": "Located just off of the central town square, this tavern sees some regular business over the working week, but does not get too busy. It has a well lit interior, with the walls and floor being made up of cobblestone. Three evenly-spaced torches appear on the wall opposite the war, with two torches also placed on the wall behind it. Above the door there is an iron shield with dwarven runes inscribed into it, with the familiar red and gold colouring of the Crinegard Plains appearing on the edges of it.",
+         "Ye Old Gofer": "This is found in the dwarven village of the Collarglaive. It sees a lot of clientel, particularly at the end of the working week, where predominantly dwarves go to drink away their hard-earned money from working in the mines. Drinks are brought to you upon sitting down at an empty table. It has an open interior. No door and no roof. It has dark, stained wooden floors and low-seating tables. You would not see a bar if you were to look around, and very brief encounters with workers only occur when you are given your drinks.",
+         "The Barracks": "The main barracks are found by the south entrance of town, down the rocky ramp that decends from the tall gate. It is a simple one-story building made of stone bricks. The commander of the Starrgard has an office to the left of the reception. Commander Durik was a male dwarf who ran the Starrgard in Buldaar. He was a shorter dwarf with long dark hair. The Starrgard are 50% human, 30% dwarf, and 20% elf outside of the Collarglaive. Inside, they are 80% dwarf, and 20% human.",
+         "Greybrew's": "A family run potion store that opened 200 years ago. It has profitted greatly from selling unique and reliable potions to the Crown, and to the odd adventurer who finds their way to Buldaar. Greybrew was the nickname they were given by a rival famliy when the shop first opened, and they took it on as a joke. It is run by Tulbar Greybrew.",
+         "Iron Buckle": "A short ginger-haired man by the name of Nozmak is the guy to go to forge anything. He has plenty of items available, and also some finer ones for a higher price.",
+         "Gyer's Jewellers": "A gems store and jewellery just north up the road from the central square. Jeffery Gyer runs the joint.",
+         "Temple of Moradin": "The Allhammer has been very prominent throughout the Crinegard Plains for centuries, and his central temple is found in the heart of the Collarglaive, at its lowest point, making it easy to spot. Moradin represents loyalty and legacy, and are worshipped by smiths and artisans, as he guides them in the forging of great creations. The silver designs on the items forged match the designs of the clerics and paladins that follow Moradin, and can be seen wandering around the Collarglaive, Buldaar, and even outside the Crinegard Plains.",
          "The Argent Axes": "A guild responsible for the upkeep of the mines and monitoring of the rocky peaks surrounding Buldaar, members of the Argent Axes are trained warriors that are experienced in fighting beasts and anything else that dare to disrupt the secluded way of life on the mountain tops.",
          "Architecture": "The rocky landscape means you hardly find yourself in a flat surface across the town. Very up and down throughout every street. Some buildings are built into a stone wall, while others extend across a dip in the rocks.",
          "Natural Resources": "Coal, ore, some say there are traces of adamantine in the mines."
@@ -67,10 +74,59 @@
          "Natural Resources": "Meats, fish, fruits."
       }
    },
+   "locations": {
+      "angelica's-house": {
+         "Description": "A two-story red brick building on the corner of the main street. It is about a 5-minute walk north of the town square, in the opposite direction of the barracks."
+      },
+      "fort-kustav": {
+         "Description": "This fort is a structure located on the main road between the three major settlements in the Crinegard Plains."
+      }
+   },
+   "organisations": {
+      "red-blades": {
+         "Description": "The Red Blades are a domestic terrosim group founded in 3E-284, by General Commander Thria Bartek. They have taken over an abandoned fort at the top of the mouths of rivers leading into the lake just north of Fleydire. They have already seeded themselves into the Crinegard Plains across the year 3e-286. Using a mysterious black goo, they can turn creatures into zombie-like depictions of their former selves. They plan to disrupt the Crimson Festival in Fleydire, on the opening night/day."
+      }
+   },
    "pcs": {},
-   "npcs": {},
+   "npcs": {
+      "thria-bartek": {
+         "Description": "General Commander Thria Bartek is the highest ranked officer in the Crinegard Plains. She is just shy of 5 feet tall, and has braided, short, blonde hair, with dark blue eyes. She has an expecting voice, and has a raised eyebrow when waiting for someone to finish speaking.\nThe General Commander has run Creswell for the past 20 years. She has kept the city in order throughout her time at the top, with no question of her position being asked. However, it hasn't been easy running the regional capital of the Cringard Plains. Over the past 10 years, budget cut after budget cut has put a strain in how the Starrgard and Crimson Malitia operate under her order. She finds there is little respect for the southern regions from the King. This is also shown from the grossly high taxes being put on imports and exports processed through the Trade Guild, with little of it being kept for the Plains' use.\nOver the past two years, Bartek has had enough. She has got together a group of individuals, and formed a group known as the Red Blades. Bartek hopes to use this group for domestic terrorism throughout the region, in the hopes that the Crown will better fund them against this threat."
+      },
+      "alton": {
+         "Description": "An older gnome who works at Herbal Concoctions. He has straight, balding, light blond hair, and wears a dark brown apron."
+      },
+      "angelica-tosscobble": {
+         "Description": "An alchemist who studied with Vice-Arch Alchemist Needo Byzaar. She specialises in spider venom, and the effects it has on humanoids. She was undertaking her own personal research before she was kidnapped in the night. She has really messy golden blonde hair, and a scar across her left cheek. She had a black eye when the party first met them."
+      },
+      "ayen": {
+         "Description": "A nervous map-maker that was sketching the landscaper near Buldaar. A human with brown hair, he carried with him many scrolls rolled up, which turned out to be maps that the party now owns."
+      },
+      "dudo": {
+         "Description": "A dark-haired elf with shaven sides. He is a trader that travels Trimor in his cart, pulled by his trusty steed, Colton the horse. The cart, horse, and he are decorated in fern green attire, which distinguishes himself from other traders. Originally from Runswik, he is a bit nutty."
+      },
+      "jeffery-gyer": {
+         "Description": "The owner of Gyer's Jewellers. Longish blond-haired human, seemingly charismatic to his customers, and fell fool to the classic gag of Somewhat Queer and Nana Queer."
+      },
+      "morgon-thorngage": {
+         "Description": "Captain in the Starrgard in Creswell. A male elf of average height. He has short, curly, black hair, and brown eyes."
+      },
+      "needo-byzaar": {
+         "Description": "The alchemist is a high-elven individual who is a researcher at the Grindwall Record in Darrington. He is 6 feet tall, and has long brown hair, and deep green eyes. He wears purple robes with silver embroidery designs."
+      },
+      "the-tulleys": {
+         "Description": "The Tulleys are the two humans who run the enchanters shop Tulley's & Tulley's in Creswell. They are looking to branch out to other regions if business takes a hold.",
+         "Aldom Tulley": "The eldest of the two brothers. Has straight, longish, dark hair. Prominent voice that can be heard over others. Gives Dyron a bit of a rough time. Is in charge of the business side of things at the shop.",
+         "Dyron Tulley": "Curly, short, dark hair. He has a nervous voice, almost like Tweek. He focusses on the enchantment of items, but was the brother who the party met on their first visit to the store.\nDyron asked the party to retrieve a battle-axe that belonged to the family. It was supposedly stolen from the store one night, and Dyron thinks he knew who did it. He gave the party a description of a house in the Outer Ring where he believes the battle-axe is."
+      },
+      "zerrioth": {
+         "Description": "An old lady with twisted dark grey hair. She is bent forward almost in a hunchback position. She wore long tattered black robes that cover most of her body but her head."
+      },
+      "tulbar-greybrew": {
+         "Description": "Tulbar Greybrew runs Greybrew's Potion Store in Buldaar, located in the central town square. Tulbar and his wife Gaeden opened this shop 200 years ago after they moved away Duffledon, after a terrible disease plagued the crops they would use for potion making. Tulbar's sister took him in, and they opened a small stall in the markets where they would sell herbal remidies and creams. An individual took interest in Tulbar's alcehmical skills, and gave him a sizeable amount of gold in exchange for some complex potions. With this money, they could afford to open up a shop in the central town square that would later become Greybrew's. The Crown and the Argent Axes took interest in his skills, and he has potions commissioned to this day to help their efforts. Tulbar and Gaeden had three sons, Alton, Lorig, and Piker (deceased) Greybrew. Alton and Lorig have now carried on the family business to other neighbouring towns, whereas Piker hung around. Piker was more skilled with fighting than alchemy, so he became a part of the adventuring guild. He had blond hair. He carried with him a couple of shortswords and a pendant around his neck. \u201cIf your brother liked wheelbarrows, he died doing what he loved.\u201d They also had a daughter, Angelica, who took up the name Tosscobble after her late husband."
+      }
+   },
    "lore": {
-      "deities of trimor": {
+      "deities-of-trimor": {
          "Auril, the Frostmaiden": "The winter is harsh for some. Storms and blizzards can wreck havoc on a landscape and take no prisoners. This is the doing of Auril. The goddess of winter does not spare anyone who dares cross her fury. Many pray to halt and lessen the wrath of winter, but those who receive her blessing are not spared the bitter cold, rather are only allowed to endure it.\nEmbrace the cold, and all that is brought with it. It is a natural part of life.\nDo not succumb to a false sense of security. Danger can strike at any moment.\nSpread the word of the cold, for it shall come and spare no one.",
          "Avandra, the Change Bringer": "Those who worship Avandra believe in change, freedom, and luck. Her worship is found among merchants, adventurers, and anyone wishing a change in their way of life, and a direction to follow. Her temples are found in common destinations to travellers, and sometime shrines are set up on the side of well-travelled roads.\nLuck favours the bold. Grasp your own fate, and the Change Bringer will be at your back.\nChange is inevitable, but the righteous make change for the better.\nRise against tyranny. Fight for the freedom of yourself and others.",
          "Milil, Guardian of Entertainment": "Even in times of strife, the ballad of a song, or the beauty of a poem can distract the mind for even the smallest time. Milil aims to represent life as a ever-writing ballad, an event in history a verse in a symphony, and a poem shining the light on a kingdom's hard fought victories, and the defeat of its enemies. Many bards and entertainers follow Milil for guidance, and many pay for their ale to share their stories.\nInspire others through what you know. A little happiness is sought for everywhere.\nSpread the truth of the world. A good story is the beginning of a wonderful friendship.\nEncourage other to explore the arts. Keep history intact for the future generations to come.",
@@ -79,7 +135,7 @@
          "Savras, the All-Seeing": "Many of those who seek greater knowledge or study the ways of the arcane seek the help of Savras. He provides insight to the future, and guides those who worship him to learn from the past. The All-Seeing's main temple is situated in Zadaar, and those who worship him aim to make the trek there once in their lifetime's to see him in all his glory.\nShare your knowledge with those who seek it. Teaching others in what you have learned can further understanding, rather than letting it die out.\nActively seek out further knowledge. Nothing is ever fully understood.\nShow off you work and hold your discoveries at the highest esteem.",
          "Torm, the Ally on the Battlefield": "One of the oldest represented deities in Trimor, Torm is worshiped by members of the Crimson Malitia, and paladins of duty and loyality. The brand of Torm shines bright at any branch or encampment across the kingdom, and the word of his might is shared across the kingdom.\nBe the champion of the weak and defenceless. Protect those who do not possess the power you wield. Care for the sick and aid the distressed.\nBe stern and just in your battles with evil. Make war upon evil without cessation. Let your wrath destroy the wicked.\nServe the common good and the rule of law. Your duties are towards protecting others. Strive to do so by questioning unjust laws, and suggesting improvements."
       },
-      "holidays of trimor": {
+      "holidays-of-trimor": {
          "Harvestcrest (Ralona 22)": "This holiday celebrates the new fruits and harvest that come through during the start of spring. A lot of fresh agriculture is harvested for a gathering in many streets and squares throughout the settlements in Trimor. The day surrounds fun and games that start at noon.",
          "Crimson Festival (Fenlar 13-23)": "One of the most important holidays in Trimor is the Crimson Festival. It celebrates how the Crimson Malitia fought back the fiend army attacks, and their victory at the end of the second era. It is also the holy day for Torm. It is celebrated for 11 days leading up until New Year, as this is the time the talks of merging the regions to become Trimor occurred, which happened on the night of the 23rd of Fenlar. Many people have the biggest celebration on the night leading up to New Year.",
          "New Year (Zumlen 1)": "The New Year is a celebration to Avandra, the Change Bringer. She encourages a change in one's life for the better, and there is not greater time to promote this than at the start of a brand new year.",
