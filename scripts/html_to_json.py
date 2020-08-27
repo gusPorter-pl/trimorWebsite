@@ -100,8 +100,8 @@ def html_list_to_dictionary(input_list):
                             tag, info = get_tag_and_info(info)
                         key_tag = info
                     elif tag == "span":  # We want to get the info out of span
-                        span_tag, span_info = get_tag_and_info(line)
-                        inner_tag, inner_info = get_tag_and_info(span_info)
+                        # span_tag, span_info = get_tag_and_info(line)
+                        inner_tag, inner_info = get_tag_and_info(info)
                         if line[-1] != '>':  # There is more text after span tag
                             inner_info += line[line.rfind('>') + 1: ]
                         span_last = True  # So we know how we add to the dictionary
@@ -151,9 +151,11 @@ def main():
             "creswell",
             "darrington",
             "duffledon",
-            "fleydire",
-            "trimor"
+            "fleydire"
         ],
+        "regions": [
+            "trimor"
+        ]
         "locations": [
             "angelica's-house",
             "fort-kustav"
