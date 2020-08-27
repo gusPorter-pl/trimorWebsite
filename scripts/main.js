@@ -1,13 +1,15 @@
-const search = () => {
+const searchJson = () => {
    const searchInput = document.getElementById("searchInput").value.toLowerCase();
    const contents = document.getElementById("contents");
    const search = document.getElementById("search");
    const filters = {
       "settlements": document.getElementById("Locations").checked,
-      "lore": document.getElementById("Lore").checked,
-      "npcs": document.getElementById("NPCs").checked,
+      "regions": document.getElementById("Locations").checked,
+      "locations": document.getElementById("Locations").checked,
+      "organisations": document.getElementById("Organisations").checked,
       "pcs": document.getElementById("PCs").checked,
-      "organisations": document.getElementById("Organisations").checked
+      "npcs": document.getElementById("NPCs").checked,
+      "lore": document.getElementById("Lore").checked
    };
    
    search.innerHTML = "";
@@ -93,6 +95,12 @@ const notAllFalse = (filters) => {
          return true;
       }
    } return false;
+}
+
+const openNotes = () => {
+   // change this to "showNotes()" and have this available on all pages
+   document.getElementById("searchInput").value = "";
+   searchJson();
 }
 
 const showFilters = () => {
