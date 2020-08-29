@@ -56,6 +56,23 @@ h4 {
    font-variant: small-caps;
    margin-top: 0.6em;
 }
+/*
+   This h4 class mimics the h4 header, to avoid the
+   header being used as a key in /scripts/info.json
+*/
+.h4 {
+   font-family: Georgia, Times, "Times New Roman", serif;
+   margin-top: 0.6em;
+   margin-bottom: 0.6em;
+   margin-left: 10px;
+   padding-left: 5px;
+   margin-right: 10px;
+   padding-right: 5px;
+   font-size: 1.3em;
+   font-weight: bold;
+   color: #47362b;
+   font-variant: small-caps;
+}
 h5 {
    font-size: 1.1em;
    color: #362922;
