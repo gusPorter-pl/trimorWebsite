@@ -73,9 +73,9 @@ def html_list_to_dictionary(input_list):
         end_opening_tag = line.rfind('<')
         tag_contents = line[: start_closing_tag].split()[0]
         if tag_contents[-1] == '>':  # Tag has no parameters
-            tag = tag_contents[1: -1]
+            tag = tag_contents[1: -1]  # e.g. "<h2>" -> "h2"
         else:
-            tag = tag_contents[1: ]
+            tag = tag_contents[1: ]  # e.g. "<h2" -> "h2"
         info = line[start_closing_tag + 1: end_opening_tag]
         return tag, info
 
@@ -86,6 +86,8 @@ def html_list_to_dictionary(input_list):
     span_last = False
 
     for line in input_list:
+        if len(line) == 0:
+            continue  # line is empty
         if line[0] == '<':  # Line is a tag
             if line[1] == '/':  # Line is an end tag
                 tag = get_tag(line)
@@ -109,7 +111,7 @@ def html_list_to_dictionary(input_list):
                             info_dict[key_tag] = inner_info
                         else:
                             info_dict[key_tag] += " " + inner_info
-                    elif tag == "li":  # Get the info out of the list item and add it straight to the dictionary
+                    elif tag in info_tags:  # Get the info out of the list item and add it straight to the dictionary
                         li_tag, li_info = get_tag_and_info(line)
                         if key_tag not in info_dict:
                             info_dict[key_tag] = li_info
@@ -144,46 +146,14 @@ def write_json(info_dict, article_type):
     with open(filename, 'w') as outfile:
         json.dump(json_obj, outfile, indent=3)
 
+def get_articles():
+    filename = "./articles.json"
+    with open(filename, 'r') as json_file:
+        articles = json.load(json_file)
+    return articles
+
 def main():
-    articles = {
-        "settlements": [
-            "buldaar",
-            "creswell",
-            "darrington",
-            "duffledon",
-            "fleydire"
-        ],
-        "regions": [
-            "trimor"
-        ]
-        "locations": [
-            "angelica's-house",
-            "fort-kustav"
-        ],
-        "organisations": [
-            "arcane-conglomerate",
-            "crimson-malitia",
-            "grindwall-record",
-            "red-blades"
-        ],
-        "npcs": [
-            "alton",
-            "angelica-tosscobble",
-            "ayen",
-            "dudo",
-            "jeffery-gyer",
-            "morgon-thorngage",
-            "needo-byzaar",
-            "the-tulleys",
-            "thria-bartek",
-            "tulbar-greybrew",
-            "zerrioth"
-        ],
-        "lore": [
-            "deities-of-trimor",
-            "holidays-of-trimor"
-        ]
-    }
+    articles = get_articles()
     article_type, article = get_article(articles)
     get_html_and_set_json(article_type, article)
                 

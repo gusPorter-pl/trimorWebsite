@@ -1,0 +1,57 @@
+{
+   "settlements": [
+      "buldaar",
+      "creswell",
+      "darrington",
+      "duffledon",
+      "fleydire",
+      "muldire"
+   ],
+   "regions": [
+      "trimor"
+   ],
+   "locations": [
+      "angelica's-house",
+      "fort-kustav"
+   ],
+   "organisations": [
+      "arcane-conglomerate",
+      "black-whisper",
+      "dread-maw",
+      "grindwall-record",
+      "red-blades",
+      "solemn-saviours",
+      "umbra-circle"
+   ],
+   "pcs": [
+      "bizzie",
+      "mrtlvnjr",
+      "nora",
+      "pop-princess",
+      "sahar",
+      "salrakir",
+      "xaylor"
+   ],
+   "npcs": [
+      "alton",
+      "angelica-tosscobble",
+      "ayen",
+      "bill-and-billie-osbul",
+      "crela",
+      "dudo",
+      "jeffery-gyer",
+      "mahana",
+      "morgon-thorngage",
+      "needo-byzaar",
+      "pod",
+      "sulqrin",
+      "the-tulleys",
+      "thria-bartek",
+      "tulbar-greybrew",
+      "zerrioth"
+   ],
+   "lore": [
+      "deities-of-trimor",
+      "holidays-of-trimor"
+   ]
+}
