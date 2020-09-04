@@ -24,53 +24,59 @@ const searchJson = () => {
       .then(infoObject => {
          const articleTypes = Object.keys(infoObject);
          let count = 0;
-         for (let articleType of articleTypes) {
+         articleTypes.forEach((articleType) => {
             // "settlements", "lore", ...
             if (!filters[articleType] && notAllFalse(filters)) {
-               continue;
+               return;
             }
-            let articles = infoObject[articleType];
-            let articleTitles = Object.keys(articles);
+            const articles = infoObject[articleType];
+            const articleTitles = Object.keys(articles);
             if (articleTitles.length > 0) {
-               for (let articleTitle of articleTitles) {
+               articleTitles.forEach((articleTitle) => {
                   // "trimor", "creswell", ...
-                  let page = document.createElement("div");
-                  let articleContents = articles[articleTitle];
-                  let sections = Object.keys(articleContents);
-                  for (let section of sections) {
+                  const page = document.createElement("div");
+                  const articleContents = articles[articleTitle];
+                  const sections = Object.keys(articleContents);
+                  sections.forEach((section) => {
                      // "Demographics", "Government", ...
-                     let description = articleContents[section];
+                     const description = articleContents[section];
                      if (
                         section.toLowerCase().includes(searchInput) || 
                         description.toLowerCase().includes(searchInput)
                      ) {
                         if (page.innerHTML === "") {
-                           let title = document.createElement("h3");
-                           let titleLink = document.createElement("a");
+                           // Move this out of for loop?
+                           const title = document.createElement("h3");
+                           const titleLink = document.createElement("a");
                            titleLink.href = "./html/" + articleType + "/" + articleTitle + ".html";
                            titleLink.onclick = clearSearch;
                            titleLink.innerHTML = capitalise(articleTitle);
                            title.appendChild(titleLink);
                            page.appendChild(title);
                         }
-                        let sectionHeader = document.createElement("h4");
+                        if (section === "Backstory") {
+                           // Backstories are too large and clog up search results,
+                           //   but include page in results
+                           return;
+                        }
+                        const sectionHeader = document.createElement("h4");
                         sectionHeader.innerHTML = section;
                         page.appendChild(sectionHeader);
-                        let sectionContents = document.createElement("p");
+                        const sectionContents = document.createElement("p");
                         sectionContents.innerHTML = description;
                         page.appendChild(sectionContents);
                      }
-                  }
+                  });
                   if (page.innerHTML !== "") {
                      if (count > 0) {
-                        let line = document.createElement("hr");
+                        const line = document.createElement("hr");
                         search.appendChild(line);
                      } count++;
                      search.appendChild(page);
                   }
-               }
+               });
             }
-         }
+         });
       });
    }
 }
