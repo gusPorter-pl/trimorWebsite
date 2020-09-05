@@ -1,24 +1,74 @@
 {
-   "settlements": [
-      "buldaar",
-      "creswell",
-      "darrington",
-      "duffledon",
-      "fleydire",
-      "muldire"
-   ],
-   "regions": [
-      "trimor"
-   ],
    "locations": [
       "angelica's-house",
+      "astrakhan",
       "fort-kustav"
+   ],
+   "lore": [
+      "deities-of-trimor",
+      "holidays-of-trimor",
+      "houses",
+      "shub-niggurath"
+   ],
+   "maps": [
+      "map-of-crinegard-plains",
+      "map-of-trimor"
+   ],
+   "npcs": [
+      "agafa-setare",
+      "alton",
+      "angelica-tosscobble",
+      "arinis",
+      "ayen",
+      "baron-gerbert",
+      "bill-and-billie-osbul",
+      "corbin-blue",
+      "crela",
+      "darson",
+      "dudo",
+      "eldorwyn",
+      "filkna",
+      "gafan-setare",
+      "gholqaen",
+      "griangoth",
+      "griangyth",
+      "isolna-davaris",
+      "jeffery-gyer",
+      "jonathon",
+      "lucan-velvere",
+      "lucia-morphi",
+      "mahana",
+      "marfaris",
+      "morgon-thorngage",
+      "mr-silver",
+      "mr-whisper",
+      "mr-wolf",
+      "mrtlvnjr-mum",
+      "needo-byzaar",
+      "orkas",
+      "pip-stonesong",
+      "pod",
+      "sahar's-family",
+      "sulqrin",
+      "tarvis",
+      "the-carryns",
+      "the-flamehides",
+      "the-granitemauls",
+      "the-hartdüms",
+      "the-hinals",
+      "the-tulleys",
+      "the-yinwenys",
+      "thria-bartek",
+      "tulbar-greybrew",
+      "zerrioth",
+      "zirruc"
    ],
    "organisations": [
       "arcane-conglomerate",
       "black-whisper",
       "dread-maw",
       "grindwall-record",
+      "ivory-lotus",
       "red-blades",
       "solemn-saviours",
       "umbra-circle"
@@ -32,28 +82,22 @@
       "salrakir",
       "xaylor"
    ],
-   "npcs": [
-      "alton",
-      "angelica-tosscobble",
-      "arinis",
-      "ayen",
-      "bill-and-billie-osbul",
-      "crela",
-      "dudo",
-      "isolna-davaris",
-      "jeffery-gyer",
-      "mahana",
-      "morgon-thorngage",
-      "needo-byzaar",
-      "pod",
-      "sulqrin",
-      "the-tulleys",
-      "thria-bartek",
-      "tulbar-greybrew",
-      "zerrioth"
+   "regions": [
+      "trimor"
    ],
-   "lore": [
-      "deities-of-trimor",
-      "holidays-of-trimor"
+   "settlements": [
+      "buldaar",
+      "cornira",
+      "creswell",
+      "crosskeep",
+      "darrington",
+      "duffledon",
+      "felderwind",
+      "fleydire",
+      "highgate",
+      "kahf'nduwel",
+      "muldire",
+      "ruins-of-numenlaiqua",
+      "zadaar"
    ]
 }
