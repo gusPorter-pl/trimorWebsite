@@ -10,6 +10,7 @@ def get_article(articles):
     print("{}\n{}\n{}".format(hashes, message, hashes))
     print("\nWhich article type would you like to load?")
     article_types = list(articles.keys())
+    article_types.remove("maps")
     for i in range(0, len(article_types)):
         print("{}. {}".format(i + 1, article_types[i]))
     article_type = input("Enter number: ")

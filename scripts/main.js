@@ -1,3 +1,26 @@
+const articleTypeLoad = () => {
+   const div = document.getElementById("contents");
+   fetch("./scripts/articles.json")
+   .then((response) => response.json())
+   .then(articlesObject => {
+      const articleTypes = Object.keys(articlesObject);
+      console.log(articleTypes);
+      articleTypes.forEach((articleType) => {
+         const fileLocation = "./html/" + articleType + "/index.html";
+         console.log(fileLocation);
+         articleType = capitalise(articleType);
+
+         const header = document.createElement("h3");
+         const anchor = document.createElement("a");
+         anchor.href = fileLocation;
+         anchor.innerHTML = articleType;
+         
+         header.appendChild(anchor);
+         div.appendChild(header);
+      });
+   });
+}
+
 const searchJson = () => {
    const searchInput = document.getElementById("searchInput").value.toLowerCase();
    const contents = document.getElementById("contents");
@@ -89,7 +112,7 @@ const capitalise = aString => {
    aString = aString.charAt(0).toUpperCase() + aString.slice(1, aString.length);
    for (let i = 0; i < aString.length; i++) {
       if (aString.charAt(i) == "-") {
-         aString = aString.slice(0, i) + " " + aString.slice(i + 1, aString.length);
+         aString = aString.slice(0, i) + " " + aString.charAt(i + 1).toUpperCase() + aString.slice(i + 2, aString.length);
       }
    } return aString;
 };
@@ -124,8 +147,5 @@ const hideFilters = () => {
 }
 
 window.onload = () => {
-   // document.getElementById("contents").style.display = "block";
-   // document.getElementById("search").style.display = "none";
-   // document.getElementById("showFilters").style.display = "block";
-   // document.getElementById("hideFilters").style.display = "none";
+   articleTypeLoad();
 }
