@@ -4,10 +4,8 @@ const articleTypeLoad = () => {
    .then((response) => response.json())
    .then(articlesObject => {
       const articleTypes = Object.keys(articlesObject);
-      console.log(articleTypes);
       articleTypes.forEach((articleType) => {
          const fileLocation = "./html/" + articleType + "/index.html";
-         console.log(fileLocation);
          articleType = capitalise(articleType);
 
          const header = document.createElement("h3");
