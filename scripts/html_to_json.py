@@ -147,7 +147,7 @@ def write_json(info_dict, article_type):
 
     with open(filename, 'w') as outfile:
         json.dump(json_obj, outfile, indent=3)
-    time.sleep(0.02)
+    time.sleep(0.05)
 
 def get_available_articles():
     filename = "./articles.json"
