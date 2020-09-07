@@ -1,5 +1,6 @@
 import json
 import sys
+import time
 """
 Converts html text to json for searching
 """
@@ -10,23 +11,23 @@ def get_article(articles):
     print("{}\n{}\n{}".format(hashes, message, hashes))
     print("\nWhich article type would you like to load?")
     article_types = list(articles.keys())
-    article_types.remove("maps")
     for i in range(0, len(article_types)):
         print("{}. {}".format(i + 1, article_types[i]))
     article_type = input("Enter number: ")
     try:
         article_int = int(article_type)
     except ValueError:
+        if article_type == "all":
+            return "all", None
         print("Invalid value")
         sys.exit()
-    finally:
-        try:
-            if article_int <= 0:
-                raise IndexError()
-            article_type = article_types[article_int - 1]
-        except IndexError:
-            print("Invalid value")
-            sys.exit()
+    try:
+        if article_int <= 0:
+            raise IndexError()
+        article_type = article_types[article_int - 1]
+    except IndexError:
+        print("Invalid value")
+        sys.exit()
     print("\nWhich article would you like to load?")
     article_list = list(articles[article_type])
     for i in range(0, len(article_list)):
@@ -146,17 +147,24 @@ def write_json(info_dict, article_type):
 
     with open(filename, 'w') as outfile:
         json.dump(json_obj, outfile, indent=3)
+    time.sleep(0.01)
 
-def get_articles():
+def get_available_articles():
     filename = "./articles.json"
     with open(filename, 'r') as json_file:
         articles = json.load(json_file)
+    del articles["maps"]
     return articles
 
 def main():
-    articles = get_articles()
+    articles = get_available_articles()
     article_type, article = get_article(articles)
-    get_html_and_set_json(article_type, article)
+    if article_type == "all":
+        for article_type, articles in articles.items():
+            for article in articles:
+                get_html_and_set_json(article_type, article)
+    else:
+        get_html_and_set_json(article_type, article)
                 
 def get_html_and_set_json(article_type, article):
     try:
