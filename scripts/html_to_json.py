@@ -141,17 +141,17 @@ def write_json(info_dict, article_type):
         if page[i] == " ":
             page = page[:i] + "-" + page[i + 1:]
     del info_dict["title"]
-    with open(filename, 'r') as json_file:
+    with open(filename, 'r', encoding="utf-8") as json_file:
         json_obj = json.load(json_file)
         json_obj[article_type][page] = info_dict
 
-    with open(filename, 'w') as outfile:
-        json.dump(json_obj, outfile, indent=3)
+    with open(filename, 'w', encoding="utf-8") as outfile:
+        json.dump(json_obj, outfile, indent=3, ensure_ascii=False)
     time.sleep(0.05)
 
 def get_available_articles():
     filename = "./articles.json"
-    with open(filename, 'r') as json_file:
+    with open(filename, 'r', encoding="utf-8") as json_file:
         articles = json.load(json_file)
     del articles["maps"]
     return articles
