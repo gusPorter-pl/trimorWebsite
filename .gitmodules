@@ -1,0 +1,3 @@
+[submodule "trimor-html"]
+	path = trimor-html
+	url = https://github.com/gusPorter-pl/trimor-html.git
