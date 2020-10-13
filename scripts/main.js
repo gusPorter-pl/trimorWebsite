@@ -1,6 +1,6 @@
 const articleTypeLoad = () => {
    const div = document.getElementById("contents");
-   fetch("./scripts/articles.json")
+   fetch("./html/json/articles.json")
    .then((response) => response.json())
    .then(articlesObject => {
       const articleTypes = Object.keys(articlesObject);
@@ -40,7 +40,7 @@ const searchJson = () => {
    } else {
       search.style.display = "block";
       contents.style.display = "none";
-      fetch("./scripts/info.json")
+      fetch("./html/json/info.json")
       .then((response) => response.json())
       .then(infoObject => {
          const articleTypes = Object.keys(infoObject);

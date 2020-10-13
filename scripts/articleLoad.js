@@ -3,7 +3,7 @@ const getArticles = () => {
    const page = path.split("/");
    const articleType = page[2];
    const div = document.getElementById(articleType);
-   fetch("../../scripts/articles.json")
+   fetch("../json/articles.json")
    .then((response) => response.json())
    .then(articlesObject => {
       const articles = articlesObject[articleType];

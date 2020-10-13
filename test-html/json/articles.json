@@ -1,0 +1,35 @@
+{
+   "locations": [
+      "angelica's-house",
+      "fort-kustav"
+   ],
+   "lore": [
+      "deities-of-trimor",
+      "holidays-of-trimor"
+   ],
+   "maps": [
+      "map-of-crinegard-plains",
+      "map-of-trimor"
+   ],
+   "npcs": [
+      "ayen",
+      "dudo",
+      "grimald-hayward",
+      "jeffery-gyer",
+      "morgon-thorngage",
+      "needo-byzaar",
+      "the-tulleys"
+   ],
+   "organisations": [
+      "grindwall-record"
+   ],
+   "pcs": [],
+   "regions": [
+      "trimor"
+   ],
+   "settlements": [
+      "buldaar",
+      "creswell",
+      "fleydire"
+   ]
+}
