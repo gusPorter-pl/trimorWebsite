@@ -135,7 +135,7 @@ def html_list_to_dictionary(input_list):
     return info_dict
 
 def write_json(info_dict, article_type):
-    filename = "./info.json"
+    filename = "../html/json/info.json"
     page = info_dict["title"].lower()
     for i in range(len(page)):
         if page[i] == " ":
@@ -150,7 +150,7 @@ def write_json(info_dict, article_type):
     time.sleep(0.05)
 
 def get_available_articles():
-    filename = "./articles.json"
+    filename = "../html/json/articles.json"
     with open(filename, 'r', encoding="utf-8") as json_file:
         articles = json.load(json_file)
     del articles["maps"]
