@@ -7,7 +7,7 @@ Creates an empty html file
 
 def get_article_type():
 
-    def get_available_article_types():
+    def get_available_articles():
         filename = "../html/json/articles.json"
         with open(filename, 'r', encoding="utf-8") as json_file:
             articles = json.load(json_file)
@@ -29,8 +29,8 @@ def get_article_type():
             sys.exit()
         return article_type
 
-    article_types = get_available_article_types()
-    return get_article_type(article_types)
+    articles = get_available_articles()
+    return get_article_type(articles)
 
 def get_article(article_type):
     return input("\nEnter article name for type \"{}\" (Remember to capitalise): ".format(article_type))
@@ -47,7 +47,6 @@ def confirm_correct_options(article_type, article):
         sys.exit(0)
 
 def create_file(article_type, article):
-    # Needs to write to articlesToDo.json, and add file in html {article} folder
     article_filename = article.lower()
     for i in range(len(article)):
         if article_filename[i] == " ":
