@@ -72,12 +72,15 @@ def create_file(article_type, article):
         "      <div class=\"body\">\n",
         "         <img class=\"centre\" src=\"../../images/trimorHeader.png\">\n",
         "         <h5><a href=\"../../index.html\">&lt&lt&lt Return to Contents</a></h5>\n",
-        "         <h5><a href=\"./index.html\">&lt&lt&lt Return to ________</a></h5>\n",
+        "         <h5><a href=\"./index.html\">&lt&lt&lt Return to {}</a></h5>\n".format(
+                                                                                    article_type.capitalize() if article_type != "npcs" else "NPC's"
+                                                                                  ),
         "         \n",
         "      </div>\n",
         "   </body>\n",
         "</html>"
     ]
+    if article_type == "other": output_text.pop(14)
     output_file = open(filename, 'w')
     for line in output_text:
         output_file.write(line)
