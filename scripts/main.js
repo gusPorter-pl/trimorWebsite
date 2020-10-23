@@ -4,7 +4,12 @@ const articleTypeLoad = () => {
    .then((response) => response.json())
    .then(articlesObject => {
       const articleTypes = Object.keys(articlesObject);
+      console.info(articleTypes);
       articleTypes.forEach((articleType) => {
+         if (articleType === "other") {
+            return;
+         }
+
          const fileLocation = "./html/" + articleType + "/index.html";
          articleType = capitalise(articleType);
 
@@ -62,6 +67,7 @@ const searchJson = () => {
                      // "Demographics", "Government", ...
                      const description = articleContents[section];
                      if (
+                        articleTitle.toLowerCase().includes(searchInput) || 
                         section.toLowerCase().includes(searchInput) || 
                         description.toLowerCase().includes(searchInput)
                      ) {
