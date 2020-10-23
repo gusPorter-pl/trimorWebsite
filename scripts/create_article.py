@@ -34,12 +34,24 @@ def get_article_type():
 def get_article(article_type):
     return input("\nEnter article name for type \"{}\": ".format(article_type))
 
+def confirm_correct_options(article_type, article):
+    acceptable_types = ("y", "n", "Y", "N")
+    while True:
+        boolean = input("\nIs this the correct article and type? (y/n)\n{}: {} ".format(article_type, article))
+        if boolean in acceptable_types:
+            break
+        else:
+            print("Invalid value")
+    if boolean == "n" or boolean == "N":
+        sys.exit(0)
+
 def create_file(article_type, article):
     pass
 
 def main():
     article_type = get_article_type()
     article = get_article(article_type)
+    confirm_correct_options(article_type, article)
     create_file(article_type, article)
 
 if __name__ == "__main__":
