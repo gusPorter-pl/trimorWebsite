@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 """
 Creates an empty html file
 """
@@ -46,7 +47,41 @@ def confirm_correct_options(article_type, article):
         sys.exit(0)
 
 def create_file(article_type, article):
-    pass
+    # Needs to write to articlesToDo.json, and add file in html {article} folder
+    article_filename = article.lower()
+    for i in range(len(article)):
+        if article_filename[i] == " ":
+            article_filename = article_filename[:i] + "-" + article_filename[i + 1:]
+    filename = "../html/{}/{}.html".format(article_type, article_filename)
+    if os.path.isfile(filename):
+        print("\nThis file already exists")
+        sys.exit(0)
+
+    output_text = [
+        "<!DOCTYPE html>\n",
+        "<html>\n",
+        "   <head>\n",
+        "      <title>{}</title>\n".format(article),
+        "      <meta charset=\"UTF-8\">\n",
+        "      <link rel=\"stylesheet\" href=\"../../styles/styles.css\" type=\"text/css\"/>\n",
+        "   </head>\n",
+        "   <body>\n",
+        "      <header>\n",
+        "         <h1 class=\"body\" style=\"padding: 15px;\">{}</h1>\n".format(article),
+        "      </header>\n",
+        "      <div class=\"body\">\n",
+        "         <img class=\"centre\" src=\"../../images/trimorHeader.png\">\n",
+        "         <h5><a href=\"../../index.html\">&lt&lt&lt Return to Contents</a></h5>\n",
+        "         <h5><a href=\"./index.html\">&lt&lt&lt Return to ________</a></h5>\n",
+        "         \n",
+        "      </div>\n",
+        "   </body>\n",
+        "</html>"
+    ]
+    output_file = open(filename, 'w')
+    for line in output_text:
+        output_file.write(line)
+    output_file.close()
 
 def main():
     article_type = get_article_type()
