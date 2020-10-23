@@ -50,9 +50,10 @@ const searchJson = () => {
       .then(infoObject => {
          const articleTypes = Object.keys(infoObject);
          let count = 0;
+         const checkedFilters = notAllFalse(filters);
          articleTypes.forEach((articleType) => {
             // "settlements", "lore", ...
-            if (!filters[articleType] && notAllFalse(filters)) {
+            if (!filters[articleType] && checkedFilters) {
                return;
             }
             const articles = infoObject[articleType];
