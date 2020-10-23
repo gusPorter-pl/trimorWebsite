@@ -33,7 +33,7 @@ def get_article_type():
     return get_article_type(article_types)
 
 def get_article(article_type):
-    return input("\nEnter article name for type \"{}\": ".format(article_type))
+    return input("\nEnter article name for type \"{}\" (Remember to capitalise): ".format(article_type))
 
 def confirm_correct_options(article_type, article):
     acceptable_types = ("y", "n", "Y", "N")
