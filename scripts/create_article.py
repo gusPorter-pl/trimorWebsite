@@ -31,16 +31,15 @@ def get_article_type():
     article_types = get_available_article_types()
     return get_article_type(article_types)
 
-def get_article():
-    pass
+def get_article(article_type):
+    return input("\nEnter article name for type \"{}\": ".format(article_type))
 
 def create_file(article_type, article):
     pass
 
 def main():
     article_type = get_article_type()
-    print(article_type)
-    article = get_article()
+    article = get_article(article_type)
     create_file(article_type, article)
 
 if __name__ == "__main__":
