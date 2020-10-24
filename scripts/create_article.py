@@ -31,10 +31,14 @@ def get_article_type():
 def get_article(article_type):
     return input("\nEnter article name for type \"{}\" (Remember to capitalise): ".format(article_type))
 
-def confirm_correct_options(article_type, article):
+def confirm_correct_options(article_type, article, pc=None):
     acceptable_types = ("y", "n", "Y", "N")
+    if pc is None:
+        show_text = "\nIs this the correct article and type? (y/n)\n{}: {} ".format(article_type, article)
+    else:
+        show_text = "\nIs this the correct article, type, and PC? (y/n)\n{}: {}, {} ".format(article_type, article, pc)
     while True:
-        boolean = input("\nIs this the correct article and type? (y/n)\n{}: {} ".format(article_type, article))
+        boolean = input(show_text)
         if boolean in acceptable_types:
             break
         else:
@@ -92,6 +96,7 @@ def create_file(article_type, article):
         output_text.insert(15, 
             "         <h5><a href=\"{}\">&lt&lt&lt Return to {}</a></h5>\n".format(pc_filename, hyphens_to_spaces(pcs[i]))
         )
+        confirm_correct_options(article_type, article, hyphens_to_spaces(pcs[i]))
 
     if article_type == "other": output_text.pop(14)
     output_file = open(filename, 'w')
