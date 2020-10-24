@@ -6,13 +6,6 @@ Creates an empty html file
 """
 
 def get_article_type():
-
-    def get_available_articles():
-        filename = "../html/json/articles.json"
-        with open(filename, 'r', encoding="utf-8") as json_file:
-            articles = json.load(json_file)
-        del articles["maps"]
-        return articles
     
     def get_article_type(articles):
         article_types = list(articles.keys())
@@ -30,7 +23,10 @@ def get_article_type():
         return article_type
 
     articles = get_available_articles()
-    return get_article_type(articles)
+    article_types = list(articles.keys())
+    print("\nWhich type of article would you like to create?")
+    i = get_index(article_types)
+    return article_types[i]
 
 def get_article(article_type):
     return input("\nEnter article name for type \"{}\" (Remember to capitalise): ".format(article_type))
@@ -47,10 +43,18 @@ def confirm_correct_options(article_type, article):
         sys.exit(0)
 
 def create_file(article_type, article):
-    article_filename = article.lower()
-    for i in range(len(article)):
-        if article_filename[i] == " ":
-            article_filename = article_filename[:i] + "-" + article_filename[i + 1:]
+
+    def link_to_pc():
+        acceptable_types = ("y", "n", "Y", "N")
+        while True:
+            boolean = input("\nWould you like to add a link to a PC? (y/n) ")
+            if boolean in acceptable_types:
+                break
+            else:
+                print("Invalid value")
+        return boolean == "y" or boolean == "Y"
+
+    article_filename = spaces_to_hyphens(article)
     filename = "../html/{}/{}.html".format(article_type, article_filename)
     if os.path.isfile(filename):
         print("\nThis file already exists")
@@ -79,6 +83,16 @@ def create_file(article_type, article):
         "   </body>\n",
         "</html>"
     ]
+
+    if link_to_pc():
+        articles = get_available_articles()
+        pcs = articles["pcs"]
+        i = get_index(tuple(hyphens_to_spaces(pc) for pc in pcs))
+        pc_filename = "../pcs/{}.html".format(pcs[i])
+        output_text.insert(15, 
+            "         <h5><a href=\"{}\">&lt&lt&lt Return to {}</a></h5>\n".format(pc_filename, hyphens_to_spaces(pcs[i]))
+        )
+
     if article_type == "other": output_text.pop(14)
     output_file = open(filename, 'w')
     for line in output_text:
@@ -90,6 +104,40 @@ def main():
     article = get_article(article_type)
     confirm_correct_options(article_type, article)
     create_file(article_type, article)
+
+def get_available_articles():
+    filename = "../html/json/articles.json"
+    with open(filename, 'r', encoding="utf-8") as json_file:
+        articles = json.load(json_file)
+    del articles["maps"]
+    return articles
+
+def get_index(a_list):
+    for i in range(0, len(a_list)):
+        print("{}. {}".format(i + 1, a_list[i]))
+    input_str = input("Enter number: ")
+    try:
+        input_int = int(input_str)
+        if input_int <= 0:
+            raise IndexError()
+        return input_int - 1
+    except (ValueError, IndexError):
+        print("Invalid value")
+        sys.exit(1)
+
+def spaces_to_hyphens(a_str):
+    a_str = a_str.lower()
+    for i in range(len(a_str)):
+        if a_str[i] == " ":
+            a_str = a_str[:i] + "-" + a_str[i + 1:]
+    return a_str
+
+def hyphens_to_spaces(a_str):
+    a_str = a_str.capitalize()
+    for i in range(len(a_str)):
+        if a_str[i] == "-":
+            a_str = a_str[:i] + " " + a_str[i + 1].upper() + a_str[i + 2:]
+    return a_str
 
 if __name__ == "__main__":
     main()
